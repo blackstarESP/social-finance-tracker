@@ -16,8 +16,12 @@ gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 # Devise Bootstrap Views
 gem 'devise-bootstrap-views'
+# An HTML prettify gem
+gem 'htmlbeautifier'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+# Get stock pricing information using the Yahoo API
+gem 'stock_quote'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
