@@ -15,6 +15,8 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  first_name             :string
+#  last_name              :string
 #
 
 class User < ApplicationRecord
@@ -25,6 +27,11 @@ class User < ApplicationRecord
 
   has_many :user_stocks
   has_many :stocks, through: :user_stocks
+
+  def full_name
+    return "#{first_name} #{last_name}".strip if (first_name || last_name)
+    'Anonymous user'
+  end
 
   def stock_already_tracked?(ticker_symbol)
     stock = Stock.find_by_ticker(ticker_symbol)
