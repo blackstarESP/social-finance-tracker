@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1.6'
 gem 'devise'
 # Bootstrap
 gem 'twitter-bootstrap-rails'
+# Font Awesome
+gem 'font-awesome-rails'
 # jQuery
 gem 'jquery-rails'
 # Devise Bootstrap Views
