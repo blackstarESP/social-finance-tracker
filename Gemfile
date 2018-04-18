@@ -18,6 +18,8 @@ gem 'jquery-rails'
 gem 'devise-bootstrap-views'
 # An HTML prettify gem
 gem 'htmlbeautifier'
+# Annotate important information
+gem 'annotate'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Get stock pricing information using the Yahoo API

@@ -1,11 +1,10 @@
 # == Schema Information
 #
-# Table name: stocks
+# Table name: user_stocks
 #
 #  id         :integer          not null, primary key
-#  ticker     :string
-#  name       :string
-#  last_price :decimal(, )
+#  user_id    :integer
+#  stock_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -13,11 +12,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  ticker: MyString
-  name: MyString
-  last_price: 9.99
+  user: one
+  stock: one
 
 two:
-  ticker: MyString
-  name: MyString
-  last_price: 9.99
+  user: two
+  stock: two
