@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #
 
+# Class defines database relationsships for user_stocks table
 class UserStock < ApplicationRecord
   belongs_to :user
   belongs_to :stock

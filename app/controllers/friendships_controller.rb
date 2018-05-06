@@ -1,3 +1,5 @@
+# Class creates functionality to locate and delete a friend record
+#  from friends list
 class FriendshipsController < ApplicationController
   def destroy
     @friendship = current_user.friendships.where(friend_id: params[:id]).first

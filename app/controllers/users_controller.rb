@@ -1,3 +1,4 @@
+# Class to define user behavior
 class UsersController < ApplicationController
   def my_portfolio
     @user = current_user
@@ -10,11 +11,13 @@ class UsersController < ApplicationController
 
   def search
     if params[:search_param].blank?
-      flash.now[:danger] = 'You entered an empty search string. Please try again.'
+      flash.now[:danger] = 'You entered an empty search string.
+                            Please try again.'
     else
       @users = User.search(params[:search_param])
       @users = current_user.except_current_user(@users)
-      flash.now[:danger] = 'No users matched this search critera.' if @users.blank?
+      flash.now[:danger] = 'No users matched this search critera.' if
+      @users.blank?
     end
     respond_to do |format|
       format.js { render partial: 'friends/result' }

@@ -9,7 +9,8 @@
 #  updated_at :datetime         not null
 #
 
+# Defines database relationships for friendships
 class Friendship < ApplicationRecord
   belongs_to :user
-  belongs_to :friend, :class_name => 'User'
+  belongs_to :friend, class_name: 'User'
 end

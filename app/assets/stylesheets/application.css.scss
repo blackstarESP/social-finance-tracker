@@ -15,6 +15,19 @@
 *= require_tree .
 *= require_self
 */
+
+/* Navigation styles */
+.nav.navbar-right li {
+  .btn {
+    color: #fff !important;
+    margin-top: 5%;
+  }
+  .btn-danger:hover {
+    background-color: darken(#d9534f, 20%) !important
+  }
+}
+
+/* Generic styles */
 .results-block {
   display: inline-block;
 }
@@ -37,13 +50,4 @@
 
 .user-name {
   padding-top: 15px;
-}
-.nav.navbar-right li {
-  .btn {
-    color: #fff !important;
-    margin-top: 5%;
-  }
-  .btn-danger:hover {
-    background-color: darken(#d9534f, 20%) !important
-  }
 }

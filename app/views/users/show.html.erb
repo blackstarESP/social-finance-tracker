@@ -5,6 +5,8 @@
   <dt><strong>Email</strong></dt>
   <dd><%= @user.email %></dd>
 </dl>
+
+<!-- Echo stocks list if exists -->
 <% if @user.stocks.size > 0 %>
   <%= render 'stocks/list' %>
 <% else %>

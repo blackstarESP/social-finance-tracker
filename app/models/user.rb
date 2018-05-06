@@ -19,6 +19,8 @@
 #  last_name              :string
 #
 
+# Class defines database relationships and several heper methods
+#  for tracking stocks and assessing redundancy
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -31,7 +33,7 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships
 
   def full_name
-    return "#{first_name} #{last_name}".strip if (first_name || last_name)
+    return "#{first_name} #{last_name}".strip if first_name || last_name
     'Anonymous user'
   end
 
@@ -52,7 +54,8 @@ class User < ApplicationRecord
   def self.search(param)
     param.strip!
     param.downcase!
-    to_send_back = (first_name_matches(param) + last_name_matches(param) + email_matches(param)).uniq
+    to_send_back = (first_name_matches(param) + last_name_matches(param) +
+                                                email_matches(param)).uniq
     return nil unless to_send_back
     to_send_back
   end
@@ -74,7 +77,7 @@ class User < ApplicationRecord
   end
 
   def except_current_user(users)
-    users.reject { |user| user.id == self.id }
+    users.reject { |user| user.id == id }
   end
 
   def not_friends_with?(friend_id)

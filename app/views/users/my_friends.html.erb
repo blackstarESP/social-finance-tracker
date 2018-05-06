@@ -1,4 +1,6 @@
 <%= render 'friends/lookup' %>
+
+<!-- Output friendships table if friendships exist -->
 <% if @friendships.size > 0 %>
   <table class="table table-striped">
     <thead>
@@ -14,12 +16,15 @@
       </tr>
     </thead>
     <tbody>
+
+      <!-- Output friendships -->
       <% @friendships.each do |friend| %>
         <tr>
           <td><%= friend.full_name %></td>
           <td><%= friend.email %></td>
           <td>
-            <%= link_to 'View profile', user_path(friend), class: 'btn btn-primary btn-xs' %>
+            <%= link_to 'View profile', user_path(friend),
+                class: 'btn btn-primary btn-xs' %>
             <%= link_to 'Remove friend', friendship_path(friend),
                                             method: :delete,
                                             data: { confirm: 'Are you sure?' },
